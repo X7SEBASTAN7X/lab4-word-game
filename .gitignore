@@ -1,0 +1,21 @@
+# General macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two spaces
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might be created in the root of a FAT partition
+.Spotlight-V100
+.Trashes
+
+# Folder config file (used by Finder)
+.fseventsd
+
+# iCloud / Mobile Documents
+.icloud
