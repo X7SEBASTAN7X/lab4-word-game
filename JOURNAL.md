@@ -1,4 +1,54 @@
 ### **New Interaction**
+- **Date**: 03-12-2026 20:35
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: then, can you make me a roadmap on how to implement the functions. if you can do it with pseudocode as comments in the #file:main.py would be great. Also, dont forget to tell me the exact logic bugs
+- **CoPilot Mode**: Edit
+- **CoPilot Model**: GPT-5.4
+- **Changes Made**: Updated main.py by adding a structured implementation roadmap and pseudocode comments for splitting responsibilities into helper functions, validating input, processing guesses, displaying progress, and running the main game loop. No functional code changes were made yet, and the file remained executable.
+- **Context and Reasons for Changes**: Reconciled the top 250 lines of JOURNAL.md against the visible recent interaction scope and found this Edit interaction missing within that bounded window. The entry was prepended without duplicating existing items. The response also identified the exact logic bugs in the current implementation, including an incorrect win condition, repeated wrong guesses reducing lives again, inconsistent return types, and missing input validation.
+- **My Observations**:
+
+### **New Interaction**
+- **Date**: 03-12-2026 20:21
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: Can you help me organize my code and tell me what to change, what to add, whats missing...
+- **CoPilot Mode**: Ask
+- **CoPilot Model**: GPT-5.4
+- **Changes Made**: No files were changed. Reviewed main.py structure and game logic, and identified the main issues: incorrect win condition, repeated wrong guesses still reducing lives, mixed return types from update_game_state, missing input validation for difficulty and guesses, misuse of list comprehensions for printing, tight coupling between input/output and game logic, and the missing if __name__ == "__main__" guard for testability.
+- **Context and Reasons for Changes**: Reconciled the top 250 lines of JOURNAL.md against the visible recent interaction scope and found this Ask interaction missing within that bounded window. The entry was prepended without duplicating existing items, and no code changes were made during the reviewed interaction.
+- **My Observations**:
+
+### **New Interaction**
+- **Date**: 03-12-2026 20:16
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: Add our previous interaction to the journal
+- **CoPilot Mode**: Edit
+- **CoPilot Model**: GPT-5.4
+- **Changes Made**: Updated JOURNAL.md by reconciling recent visible interactions and prepending missing Ask entries for the Hangman state and variable discussions, followed by this current journaling request.
+- **Context and Reasons for Changes**: The user requested that the previous interaction be added to the journal. Reconciliation was performed against the top section of JOURNAL.md and recent visible conversation turns, and missing entries were backfilled within that bounded scope before logging the current interaction.
+- **My Observations**:
+
+### **New Interaction**
+- **Date**: 03-12-2026 20:16
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: What variables are required for the game?
+- **CoPilot Mode**: Ask
+- **CoPilot Model**: GPT-5.4
+- **Changes Made**: No files were changed. Provided the minimum required Hangman game variables and identified a few common optional variables.
+- **Context and Reasons for Changes**: The user asked which variables are needed for the game design notes. The response focused on the core stored state: secret word, guessed letters, wrong guesses, maximum mistakes, and overall game state, with a brief distinction between required and optional data.
+- **My Observations**:
+
+### **New Interaction**
+- **Date**: 03-12-2026 20:16
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: What are the states of a game like Hangman may need?
+- **CoPilot Mode**: Ask
+- **CoPilot Model**: GPT-5.4
+- **Changes Made**: No files were changed. Provided a concise Hangman state model with core states and a short list of optional states.
+- **Context and Reasons for Changes**: The user was refining game design notes for a Hangman-style app. The response recommended a simple state model centered on START, WAITING_FOR_GUESS, CHECKING_GUESS, WON, and LOST, while noting that invalid input and repeated guesses can often be treated as events rather than standalone states.
+- **My Observations**:
+
+### **New Interaction**
 - **Date**: 03-09-2026 11:49
 - **User**: sebastian.seingier@epita.fr
 - **Prompt**: read the #file:copilot-instructions.md and activate the #file:journal-logger.agent.md agent
