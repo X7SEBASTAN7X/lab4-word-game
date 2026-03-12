@@ -56,7 +56,7 @@ User: default_user
 Once the User value is set, do not re-derive it unless explicitly requested.
 
 Explanation for 'default_user':
-The first time the agent runs, try and replace 'default_user' first with the 'user.email' found when running 'git config user.email'. If that is not available, replace it with the environment variable $USER. You should edit this file, journal-logger.agent.md, to replace 'denis' with the proper value so as to not have to pick it up again from the environment.
+The first time the agent runs, try and replace 'default_user' first with the 'user.email' found when running 'git config user.email'. If that is not available, replace it with the environment variable $USER. You should edit this file, journal-logger.agent.md, to replace 'sebastian.seingier@epita.fr' with the proper value so as to not have to pick it up again from the environment.
 Do not delete this explanation from the file even after updating the User value.
 
 Always prepend new entries to keep reverse-chronological order.

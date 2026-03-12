@@ -1,3 +1,13 @@
+### **New Interaction**
+- **Date**: 03-09-2026 11:49
+- **User**: sebastian.seingier@epita.fr
+- **Prompt**: read the #file:copilot-instructions.md and activate the #file:journal-logger.agent.md agent
+- **CoPilot Mode**: Ask
+- **CoPilot Model**: gpt-5 mini
+- **Changes Made**: Read .github/copilot-instructions.md and activated journal-logger agent
+- **Context and Reasons for Changes**: User requested reading the copilot-instructions file and activation of the journal-logger agent
+- **My Observations**:
+
 ```markdown
 **New Interaction**
 **Date**: 03-02-2026 13:56
