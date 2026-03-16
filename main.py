@@ -49,20 +49,20 @@ def get_valid_difficulty():
     if choice.isdigit() and 0 <= int(choice) <= 5:
         return int(choice)
     print("Invalid input. Please enter a number between 0 and 5.")
-    return get_valid_difficulty
+    return get_valid_difficulty()
 
 
 def valid_guess(guessed_letters):
     letter = input('Enter your guess here: ').lower()
     if len(letter)!=1:
         print(f"Make sure to enter a valid input, only one letter")
-        return valid_guess
+        return valid_guess(guessed_letters)
     elif not letter.isalpha():
         print(f"Make sure to enter a valid input, only accepts letters")
-        return valid_guess
+        return valid_guess(guessed_letters)
     elif letter in guessed_letters:
         print(f"You have already tried {letter}! Try another one!")
-        return valid_guess
+        return valid_guess(guessed_letters)
     return letter
             
 def display_progress(guessed, secret_word):
@@ -70,7 +70,7 @@ def display_progress(guessed, secret_word):
     print(guessed.join(''))
     
 def has_won(word, guessed):
-    return all(f in word for f in guessed)
+    return all(f in guessed for f in word)
            
 def update_game_state(secret_word, guess,guessed_letters, lives):
     guessed_letters.append(guess)
@@ -80,10 +80,11 @@ def update_game_state(secret_word, guess,guessed_letters, lives):
         print(f"Sorry, '{guess}' is not there. Lives remaining: {lives}")
     else:
         print(f"Nice! '{guess}' is in the word.")
-        [print('_ ', end='') if f not in guessed_letters else print(f,end='') for f in secret_word]
         print('')
-        
-        return (guessed_letters, lives)
+    [print('_ ', end='') if f not in guessed_letters else print(f,end='') for f in secret_word]
+    print('')
+    print(f"\n\nGuessed letter are {guessed_letters}")
+    return (guessed_letters, lives)
 
 
 
@@ -97,16 +98,23 @@ def play_game():
     print("\n--- Game Start! ---")
 
     while lives > 0:
-        display_progress(word, guessed_letters)
+        # display_progress(word, guessed_letters)
         
         current_guess = valid_guess(guessed_letters)
-        guessed_letters, lives = update_game_state(word,current_guess, guessed_letters, lives)
-        
+        result = update_game_state(word,current_guess, guessed_letters, lives)
+        guessed_letters, lives = result[0], result[1]
         if has_won(word, guessed_letters):
             print(f"\nCongratulations! You won! The word was: {word}")
             return 
 
     print(f"\nGame Over. You ran out of lives. The word was: {word}")
+    print(f"If you want to play again enter 1, else enter anything:")
+    if int(input("->"))==1:
+        play_game()
+    else:
+        print('Thanks for playing')
+        return
+
 
 if __name__ == "__main__":
     play_game()
