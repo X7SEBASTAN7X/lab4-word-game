@@ -55,3 +55,5 @@ use a random.choice to choose a letter, or start with all the letters and start 
 A smarter implementation could be to separate between guessed letters and correct letters, and then make a dictionary of the letters that usually come next to each other, therefore having a slightly better chance at winning.
 
 We could also start by choosing two vowels, or in general the letters that are more likely to come in the word.
+
+Also, another idea is making a list of MOST common letters and ignore the other ones

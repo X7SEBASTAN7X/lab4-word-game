@@ -67,7 +67,7 @@ def valid_guess(guessed_letters):
     return letter
             
 def display_progress(guessed, secret_word):
-    [print('_ ', end='') if f not in guessed else print(f,end='') for f in secret_word]
+    [print('_', end='') if f not in guessed else print(f,end='') for f in secret_word]
     print(guessed.join(''))
     
 def has_won(word, guessed):
@@ -127,14 +127,14 @@ def autoplay():
     difficulty = randint(0,5)
     print(f"Difficulty chosen is {difficulty}")
     word = get_word(difficulty)
-    lives = 5
+    lives = 10
     letters = list("abcdefghijklmnopqrstuvwxyz")
     guessed_letters = []
 
     print("\n--- Game Start! ---")
 
     while lives > 0:
-        sleep(1)
+        sleep(3/4)
         current_guess = letters.pop(randint(0,len(letters)-1))
         result = update_game_state(word,current_guess, guessed_letters, lives)
         guessed_letters, lives = result[0], result[1]
