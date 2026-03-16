@@ -114,7 +114,7 @@ def play_game():
                 print(f"\nCongratulations! You won! The word was: {word}")
                 return 
 
-        print(f"\nGame Over. You ran out of lives. The word was: {word}")
+        print(f"\nGame Over. You ran out of lives. The word was: {word}\n")
     print(f"If you want to play again enter 1, else enter anything:")
     if int(input("->"))==1:
         play_game()
@@ -125,6 +125,7 @@ def play_game():
 def autoplay():
     print("Starting Autoplay")
     difficulty = randint(0,5)
+    print(f"Difficulty chosen is {difficulty}")
     word = get_word(difficulty)
     lives = 5
     letters = list("abcdefghijklmnopqrstuvwxyz")
@@ -141,7 +142,7 @@ def autoplay():
         if has_won(word, guessed_letters):
             print(f"\nCongratulations! You won! The word was: {word}")
             return 
-    print(f"\nGame Over. You ran out of lives. The word was: {word}")
+    print(f"\nGame Over. You ran out of lives. The word was: {word}\n")
 
 
 
