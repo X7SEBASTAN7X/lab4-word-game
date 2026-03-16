@@ -50,4 +50,8 @@ Optional
 
 # AUTOPLAY
 
-use a random.choice to choose a letter, or start with all the letters and start by choosing one
+use a random.choice to choose a letter, or start with all the letters and start by choosing one and poping from the List of available letters, and do that until you loose.
+
+A smarter implementation could be to separate between guessed letters and correct letters, and then make a dictionary of the letters that usually come next to each other, therefore having a slightly better chance at winning.
+
+We could also start by choosing two vowels, or in general the letters that are more likely to come in the word.
