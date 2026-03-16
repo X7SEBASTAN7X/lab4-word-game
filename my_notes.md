@@ -47,7 +47,7 @@ Optional
     - Last guess
     - Error message
 
-# App Rules and Invariants
 
+# AUTOPLAY
 
-# App bugs
+use a random.choice to choose a letter, or start with all the letters and start by choosing one

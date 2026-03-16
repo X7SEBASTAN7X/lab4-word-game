@@ -1,4 +1,5 @@
-from random import randint
+from random import randint, choice
+from time import sleep
 
 
 # Roadmap for reorganizing this file:
@@ -90,30 +91,58 @@ def update_game_state(secret_word, guess,guessed_letters, lives):
 
 
 def play_game():
-    difficulty = get_valid_difficulty()
-    word = get_word(difficulty)
-    lives = 5
-    guessed_letters = []
-    
-    print("\n--- Game Start! ---")
 
-    while lives > 0:
-        # display_progress(word, guessed_letters)
-        
-        current_guess = valid_guess(guessed_letters)
-        result = update_game_state(word,current_guess, guessed_letters, lives)
-        guessed_letters, lives = result[0], result[1]
-        if has_won(word, guessed_letters):
-            print(f"\nCongratulations! You won! The word was: {word}")
-            return 
+    print("Do you want to play yourself, or do you want the computer to play against itself.")
+    print("If you want to play enter anything, if you want the computer to play, enter 1.")
+    if input("Enter here: ")=='1':
+        autoplay()
+    else:
+        difficulty = get_valid_difficulty()
+        word = get_word(difficulty)
+        lives = 5
+        guessed_letters = []
 
-    print(f"\nGame Over. You ran out of lives. The word was: {word}")
+        print("\n--- Game Start! ---")
+
+        while lives > 0:
+            # display_progress(word, guessed_letters)
+            
+            current_guess = valid_guess(guessed_letters)
+            result = update_game_state(word,current_guess, guessed_letters, lives)
+            guessed_letters, lives = result[0], result[1]
+            if has_won(word, guessed_letters):
+                print(f"\nCongratulations! You won! The word was: {word}")
+                return 
+
+        print(f"\nGame Over. You ran out of lives. The word was: {word}")
     print(f"If you want to play again enter 1, else enter anything:")
     if int(input("->"))==1:
         play_game()
     else:
         print('Thanks for playing')
         return
+    
+def autoplay():
+    print("Starting Autoplay")
+    difficulty = randint(0,5)
+    word = get_word(difficulty)
+    lives = 5
+    letters = list("abcdefghijklmnopqrstuvwxyz")
+    guessed_letters = []
+
+    print("\n--- Game Start! ---")
+
+    while lives > 0:
+        sleep(1)
+        current_guess = letters.pop(randint(0,len(letters)-1))
+        result = update_game_state(word,current_guess, guessed_letters, lives)
+        guessed_letters, lives = result[0], result[1]
+        
+        if has_won(word, guessed_letters):
+            print(f"\nCongratulations! You won! The word was: {word}")
+            return 
+    print(f"\nGame Over. You ran out of lives. The word was: {word}")
+
 
 
 if __name__ == "__main__":
